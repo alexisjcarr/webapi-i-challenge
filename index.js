@@ -108,6 +108,6 @@ app.put("/api/users/:id", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log("Server is up and running");
 });
