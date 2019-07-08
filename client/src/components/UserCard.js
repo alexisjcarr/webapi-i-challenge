@@ -25,19 +25,19 @@ const UserCard = props => {
   };
 
   return (
-    <StyledNav to={`users/${props.user.id}`}>
-      <Card>
-        <div>
+    <Card>
+      <div>
+        <StyledNav to={`users/${props.user.id}`}>
           <strong>{props.user.name}</strong>
-          <p>{props.user.bio}</p>
-          <p>
-            <button onClick={() => delUser(props.user.id)}>
-              <i className="far fa-trash-alt" />
-            </button>
-          </p>
-        </div>
-      </Card>
-    </StyledNav>
+        </StyledNav>
+        <p>{props.user.bio}</p>
+        <p>
+          <button onClick={() => delUser(props.user.id)}>
+            <i className="far fa-trash-alt" />
+          </button>
+        </p>
+      </div>
+    </Card>
   );
 };
 
