@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Route, NavLink } from "react-router-dom";
 import axios from "axios";
+import styled from "styled-components";
 
 import "./App.css";
 import UsersList from "./components/UsersList";
 import NewUserForm from "./components/NewUserForm";
-import EditUserForm from "./components/EditUserForm";
+// import EditUserForm from "./components/EditUserForm";
 import OneUser from "./components/OneUser";
+
+const StyledNav = styled(NavLink)`
+  margin: 10px;
+  color: black;
+  &:focus, &:hover, &:visited, &:link, &:active {
+      text-decoration: none;
+`;
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -43,11 +51,13 @@ const App = () => {
 
   return (
     <div>
-      <NavLink to="/form">Add New User</NavLink>
+      <StyledNav to="/users">Home</StyledNav>
+      {"    "}
+      <StyledNav to="/form">Add New User</StyledNav>
 
       <Route
         exact
-        path="/"
+        path="/users"
         render={props => (
           <UsersList {...props} users={users} deleteUser={deleteUser} />
         )}
@@ -58,12 +68,13 @@ const App = () => {
         render={props => <NewUserForm {...props} addUser={addUser} />}
       />
       {/* <Route
-        path="/form2"
+        exact
+        path="/users/:id"
         render={props => <EditUserForm {...props} editUser={editUser} />}
       /> */}
       <Route
         exact
-        path="/:id"
+        path="/users/:id"
         render={props => (
           <OneUser
             {...props}

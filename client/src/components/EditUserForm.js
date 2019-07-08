@@ -10,7 +10,7 @@ class EditUserForm extends Component {
   editUser = async e => {
     e.preventDefault();
     await this.props.editUser(this.props.id, this.state);
-    return <Redirect exact to="/" />;
+    return <Redirect to="/users" />;
   };
 
   handleChange = e => {
@@ -36,7 +36,9 @@ class EditUserForm extends Component {
           value={this.state.bio}
           onChange={this.handleChange}
         />
-        <button type="submit">submit edited user</button>
+        <button type="submit">
+          <i className="far fa-edit" />
+        </button>
       </form>
     );
   }

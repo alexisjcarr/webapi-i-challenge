@@ -8,7 +8,9 @@ class NewUserForm extends Component {
 
   addUser = e => {
     e.preventDefault();
-    this.props.addUser(this.state).then(() => this.props.history.push("/"));
+    this.props
+      .addUser(this.state)
+      .then(() => this.props.history.push("/users"));
   };
 
   handleChange = e => {
