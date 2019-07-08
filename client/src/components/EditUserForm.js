@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 class EditUserForm extends Component {
   state = {
@@ -6,9 +7,10 @@ class EditUserForm extends Component {
     bio: ""
   };
 
-  editUser = e => {
+  editUser = async e => {
     e.preventDefault();
-    this.props.editUser(this.state).then(() => this.props.history.push("/"));
+    await this.props.editUser(this.props.id, this.state);
+    return <Redirect exact to="/" />;
   };
 
   handleChange = e => {

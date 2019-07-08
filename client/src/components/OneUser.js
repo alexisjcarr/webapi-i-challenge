@@ -32,7 +32,7 @@ const OneUser = props => {
           </button>
         </p>
       </div>
-      <EditUserForm />
+      <EditUserForm id={user.id} editUser={props.editUser} />
     </div>
   );
 };

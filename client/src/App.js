@@ -53,17 +53,24 @@ const App = () => {
         )}
       />
       <Route
+        exact
         path="/form"
         render={props => <NewUserForm {...props} addUser={addUser} />}
       />
-      <Route
+      {/* <Route
         path="/form2"
         render={props => <EditUserForm {...props} editUser={editUser} />}
-      />
+      /> */}
       <Route
+        exact
         path="/:id"
         render={props => (
-          <OneUser {...props} users={users} deleteUser={deleteUser} />
+          <OneUser
+            {...props}
+            users={users}
+            deleteUser={deleteUser}
+            editUser={editUser}
+          />
         )}
       />
     </div>
