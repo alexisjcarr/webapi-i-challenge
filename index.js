@@ -23,7 +23,7 @@ app.get("/api/users", async (req, res) => {
 
 app.post("/api/users", async (req, res) => {
   const { name, bio } = req.body;
-  
+
   if (!name || !bio) {
     res.status(400).send({
       errorMessage: "Please provide name and bio for the user."
