@@ -67,11 +67,6 @@ const App = () => {
         path="/form"
         render={props => <NewUserForm {...props} addUser={addUser} />}
       />
-      {/* <Route
-        exact
-        path="/users/:id"
-        render={props => <EditUserForm {...props} editUser={editUser} />}
-      /> */}
       <Route
         exact
         path="/users/:id"
@@ -84,6 +79,11 @@ const App = () => {
           />
         )}
       />
+      {/* <Route
+        exact
+        path="/users/:id"
+        render={props => <EditUserForm {...props} editUser={editUser} />}
+      /> */}
     </div>
   );
 };
